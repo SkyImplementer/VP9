@@ -1,0 +1,1288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="b">
+        <df name="examples">
+        </df>
+        <df name="test">
+        </df>
+        <df name="third_party">
+          <df name="googletest">
+            <df name="src">
+              <df name="src">
+              </df>
+            </df>
+          </df>
+          <df name="libwebm">
+            <df name="common">
+            </df>
+            <df name="mkvmuxer">
+            </df>
+            <df name="mkvparser">
+            </df>
+          </df>
+          <df name="libyuv">
+            <df name="source">
+            </df>
+          </df>
+        </df>
+        <df name="tools">
+        </df>
+        <df name="vp8">
+          <df name="common">
+            <df name="generic">
+            </df>
+            <df name="x86">
+            </df>
+          </df>
+          <df name="decoder">
+          </df>
+          <df name="encoder">
+            <df name="x86">
+            </df>
+          </df>
+        </df>
+        <df name="vp9">
+          <df name="common">
+            <df name="x86">
+            </df>
+          </df>
+          <df name="decoder">
+          </df>
+          <df name="encoder">
+            <df name="x86">
+            </df>
+          </df>
+        </df>
+        <df name="vpx">
+          <df name="src">
+          </df>
+        </df>
+        <df name="vpx_dsp">
+          <df name="x86">
+          </df>
+        </df>
+        <df name="vpx_mem">
+        </df>
+        <df name="vpx_ports">
+        </df>
+        <df name="vpx_scale">
+          <df name="generic">
+          </df>
+        </df>
+        <df name="vpx_util">
+        </df>
+        <in>vp8_rtcd.h</in>
+        <in>vp9_rtcd.h</in>
+        <in>vpx_config.asm</in>
+        <in>vpx_config.c</in>
+        <in>vpx_config.h</in>
+        <in>vpx_dsp_rtcd.h</in>
+        <in>vpx_scale_rtcd.h</in>
+        <in>vpx_version.h</in>
+      </df>
+      <df name="build">
+        <df name="make">
+        </df>
+      </df>
+      <df name="examples">
+        <in>decode_to_md5.c</in>
+        <in>decode_with_drops.c</in>
+        <in>postproc.c</in>
+        <in>resize_util.c</in>
+        <in>set_maps.c</in>
+        <in>simple_decoder.c</in>
+        <in>simple_encoder.c</in>
+        <in>svc_context.h</in>
+        <in>svc_encodeframe.c</in>
+        <in>twopass_encoder.c</in>
+        <in>vp8_multi_resolution_encoder.c</in>
+        <in>vp8cx_set_ref.c</in>
+        <in>vp9_lossless_encoder.c</in>
+        <in>vp9_spatial_svc_encoder.c</in>
+        <in>vp9cx_set_ref.c</in>
+        <in>vpx_dec_fuzzer.cc</in>
+        <in>vpx_temporal_svc_encoder.c</in>
+      </df>
+      <df name="test">
+        <df name="android">
+        </df>
+        <in>acm_random.h</in>
+        <in>active_map_refresh_test.cc</in>
+        <in>active_map_test.cc</in>
+        <in>add_noise_test.cc</in>
+        <in>alt_ref_aq_segment_test.cc</in>
+        <in>altref_test.cc</in>
+        <in>aq_segment_test.cc</in>
+        <in>avg_test.cc</in>
+        <in>bench.cc</in>
+        <in>bench.h</in>
+        <in>blockiness_test.cc</in>
+        <in>borders_test.cc</in>
+        <in>buffer.h</in>
+        <in>byte_alignment_test.cc</in>
+        <in>clear_system_state.h</in>
+        <in>codec_factory.h</in>
+        <in>comp_avg_pred_test.cc</in>
+        <in>config_test.cc</in>
+        <in>consistency_test.cc</in>
+        <in>convolve_test.cc</in>
+        <in>cpu_speed_test.cc</in>
+        <in>cq_test.cc</in>
+        <in>dct16x16_test.cc</in>
+        <in>dct32x32_test.cc</in>
+        <in>dct_partial_test.cc</in>
+        <in>dct_test.cc</in>
+        <in>decode_api_test.cc</in>
+        <in>decode_corrupted.cc</in>
+        <in>decode_perf_test.cc</in>
+        <in>decode_svc_test.cc</in>
+        <in>decode_test_driver.cc</in>
+        <in>decode_test_driver.h</in>
+        <in>encode_api_test.cc</in>
+        <in>encode_perf_test.cc</in>
+        <in>encode_test_driver.cc</in>
+        <in>encode_test_driver.h</in>
+        <in>error_resilience_test.cc</in>
+        <in>external_frame_buffer_test.cc</in>
+        <in>fdct8x8_test.cc</in>
+        <in>frame_size_tests.cc</in>
+        <in>hadamard_test.cc</in>
+        <in>i420_video_source.h</in>
+        <in>idct8x8_test.cc</in>
+        <in>idct_test.cc</in>
+        <in>invalid_file_test.cc</in>
+        <in>ivf_video_source.h</in>
+        <in>keyframe_test.cc</in>
+        <in>level_test.cc</in>
+        <in>lpf_test.cc</in>
+        <in>md5_helper.h</in>
+        <in>minmax_test.cc</in>
+        <in>partial_idct_test.cc</in>
+        <in>pp_filter_test.cc</in>
+        <in>predict_test.cc</in>
+        <in>quantize_test.cc</in>
+        <in>realtime_test.cc</in>
+        <in>register_state_check.h</in>
+        <in>resize_test.cc</in>
+        <in>sad_test.cc</in>
+        <in>set_roi.cc</in>
+        <in>sum_squares_test.cc</in>
+        <in>superframe_test.cc</in>
+        <in>svc_datarate_test.cc</in>
+        <in>svc_end_to_end_test.cc</in>
+        <in>svc_test.cc</in>
+        <in>svc_test.h</in>
+        <in>test_intra_pred_speed.cc</in>
+        <in>test_libvpx.cc</in>
+        <in>test_vector_test.cc</in>
+        <in>test_vectors.cc</in>
+        <in>test_vectors.h</in>
+        <in>tile_independence_test.cc</in>
+        <in>timestamp_test.cc</in>
+        <in>user_priv_test.cc</in>
+        <in>util.h</in>
+        <in>variance_test.cc</in>
+        <in>video_source.h</in>
+        <in>vp8_boolcoder_test.cc</in>
+        <in>vp8_datarate_test.cc</in>
+        <in>vp8_decrypt_test.cc</in>
+        <in>vp8_denoiser_sse2_test.cc</in>
+        <in>vp8_fdct4x4_test.cc</in>
+        <in>vp8_fragments_test.cc</in>
+        <in>vp9_arf_freq_test.cc</in>
+        <in>vp9_block_error_test.cc</in>
+        <in>vp9_boolcoder_test.cc</in>
+        <in>vp9_datarate_test.cc</in>
+        <in>vp9_decrypt_test.cc</in>
+        <in>vp9_denoiser_test.cc</in>
+        <in>vp9_encoder_parms_get_to_decoder.cc</in>
+        <in>vp9_end_to_end_test.cc</in>
+        <in>vp9_ethread_test.cc</in>
+        <in>vp9_intrapred_test.cc</in>
+        <in>vp9_lossless_test.cc</in>
+        <in>vp9_motion_vector_test.cc</in>
+        <in>vp9_quantize_test.cc</in>
+        <in>vp9_scale_test.cc</in>
+        <in>vp9_skip_loopfilter_test.cc</in>
+        <in>vp9_subtract_test.cc</in>
+        <in>vp9_thread_test.cc</in>
+        <in>vpx_scale_test.cc</in>
+        <in>vpx_scale_test.h</in>
+        <in>webm_video_source.h</in>
+        <in>y4m_test.cc</in>
+        <in>y4m_video_source.h</in>
+        <in>yuv_temporal_filter_test.cc</in>
+        <in>yuv_video_source.h</in>
+      </df>
+      <df name="third_party">
+        <df name="googletest">
+          <df name="src">
+            <df name="include">
+              <df name="gtest">
+                <df name="internal">
+                  <df name="custom">
+                    <in>gtest-port.h</in>
+                    <in>gtest-printers.h</in>
+                    <in>gtest.h</in>
+                  </df>
+                  <in>gtest-death-test-internal.h</in>
+                  <in>gtest-filepath.h</in>
+                  <in>gtest-internal.h</in>
+                  <in>gtest-linked_ptr.h</in>
+                  <in>gtest-param-util-generated.h</in>
+                  <in>gtest-param-util.h</in>
+                  <in>gtest-port-arch.h</in>
+                  <in>gtest-port.h</in>
+                  <in>gtest-string.h</in>
+                  <in>gtest-tuple.h</in>
+                  <in>gtest-type-util.h</in>
+                </df>
+                <in>gtest-death-test.h</in>
+                <in>gtest-message.h</in>
+                <in>gtest-param-test.h</in>
+                <in>gtest-printers.h</in>
+                <in>gtest-spi.h</in>
+                <in>gtest-test-part.h</in>
+                <in>gtest-typed-test.h</in>
+                <in>gtest.h</in>
+                <in>gtest_pred_impl.h</in>
+                <in>gtest_prod.h</in>
+              </df>
+            </df>
+            <df name="src">
+              <in>gtest-all.cc</in>
+              <in>gtest-death-test.cc</in>
+              <in>gtest-filepath.cc</in>
+              <in>gtest-internal-inl.h</in>
+              <in>gtest-port.cc</in>
+              <in>gtest-printers.cc</in>
+              <in>gtest-test-part.cc</in>
+              <in>gtest-typed-test.cc</in>
+              <in>gtest.cc</in>
+              <in>gtest_main.cc</in>
+            </df>
+          </df>
+        </df>
+        <df name="libwebm">
+          <df name="common">
+            <in>file_util.cc</in>
+            <in>file_util.h</in>
+            <in>hdr_util.cc</in>
+            <in>hdr_util.h</in>
+            <in>webmids.h</in>
+          </df>
+          <df name="mkvmuxer">
+            <in>mkvmuxer.cc</in>
+            <in>mkvmuxer.h</in>
+            <in>mkvmuxertypes.h</in>
+            <in>mkvmuxerutil.cc</in>
+            <in>mkvmuxerutil.h</in>
+            <in>mkvwriter.cc</in>
+            <in>mkvwriter.h</in>
+          </df>
+          <df name="mkvparser">
+            <in>mkvparser.cc</in>
+            <in>mkvparser.h</in>
+            <in>mkvreader.cc</in>
+            <in>mkvreader.h</in>
+          </df>
+        </df>
+        <df name="libyuv">
+          <df name="include">
+            <df name="libyuv">
+              <in>basic_types.h</in>
+              <in>compare.h</in>
+              <in>convert.h</in>
+              <in>convert_argb.h</in>
+              <in>convert_from.h</in>
+              <in>convert_from_argb.h</in>
+              <in>cpu_id.h</in>
+              <in>macros_msa.h</in>
+              <in>mjpeg_decoder.h</in>
+              <in>planar_functions.h</in>
+              <in>rotate.h</in>
+              <in>rotate_argb.h</in>
+              <in>rotate_row.h</in>
+              <in>row.h</in>
+              <in>scale.h</in>
+              <in>scale_argb.h</in>
+              <in>scale_row.h</in>
+              <in>version.h</in>
+              <in>video_common.h</in>
+            </df>
+          </df>
+          <df name="source">
+            <in>compare.cc</in>
+            <in>compare_common.cc</in>
+            <in>compare_gcc.cc</in>
+            <in>compare_msa.cc</in>
+            <in>compare_neon.cc</in>
+            <in>compare_neon64.cc</in>
+            <in>compare_win.cc</in>
+            <in>convert.cc</in>
+            <in>convert_argb.cc</in>
+            <in>convert_from.cc</in>
+            <in>convert_from_argb.cc</in>
+            <in>convert_jpeg.cc</in>
+            <in>convert_to_argb.cc</in>
+            <in>convert_to_i420.cc</in>
+            <in>cpu_id.cc</in>
+            <in>mjpeg_decoder.cc</in>
+            <in>mjpeg_validate.cc</in>
+            <in>planar_functions.cc</in>
+            <in>rotate.cc</in>
+            <in>rotate_any.cc</in>
+            <in>rotate_argb.cc</in>
+            <in>rotate_common.cc</in>
+            <in>rotate_gcc.cc</in>
+            <in>rotate_msa.cc</in>
+            <in>rotate_neon.cc</in>
+            <in>rotate_neon64.cc</in>
+            <in>rotate_win.cc</in>
+            <in>row_any.cc</in>
+            <in>row_common.cc</in>
+            <in>row_gcc.cc</in>
+            <in>row_msa.cc</in>
+            <in>row_neon.cc</in>
+            <in>row_neon64.cc</in>
+            <in>row_win.cc</in>
+            <in>scale.cc</in>
+            <in>scale_any.cc</in>
+            <in>scale_argb.cc</in>
+            <in>scale_common.cc</in>
+            <in>scale_gcc.cc</in>
+            <in>scale_msa.cc</in>
+            <in>scale_neon.cc</in>
+            <in>scale_neon64.cc</in>
+            <in>scale_win.cc</in>
+            <in>video_common.cc</in>
+          </df>
+        </df>
+        <df name="x86inc">
+          <in>x86inc.asm</in>
+        </df>
+      </df>
+      <df name="tools">
+        <df name="3D-Reconstruction">
+          <df name="genY4M">
+          </df>
+          <df name="sketch_3D_reconstruction">
+          </df>
+        </df>
+        <df name="non_greedy_mv">
+        </df>
+        <in>tiny_ssim.c</in>
+      </df>
+      <df name="vp8">
+        <df name="common">
+          <df name="arm">
+            <df name="neon">
+              <in>bilinearpredict_neon.c</in>
+              <in>copymem_neon.c</in>
+              <in>dc_only_idct_add_neon.c</in>
+              <in>dequant_idct_neon.c</in>
+              <in>dequantizeb_neon.c</in>
+              <in>idct_blk_neon.c</in>
+              <in>iwalsh_neon.c</in>
+              <in>loopfiltersimplehorizontaledge_neon.c</in>
+              <in>loopfiltersimpleverticaledge_neon.c</in>
+              <in>mbloopfilter_neon.c</in>
+              <in>shortidct4x4llm_neon.c</in>
+              <in>sixtappredict_neon.c</in>
+              <in>vp8_loopfilter_neon.c</in>
+            </df>
+            <in>loopfilter_arm.c</in>
+            <in>loopfilter_arm.h</in>
+          </df>
+          <df name="generic">
+            <in>systemdependent.c</in>
+          </df>
+          <df name="mips">
+            <df name="dspr2">
+              <in>dequantize_dspr2.c</in>
+              <in>filter_dspr2.c</in>
+              <in>idct_blk_dspr2.c</in>
+              <in>idctllm_dspr2.c</in>
+              <in>reconinter_dspr2.c</in>
+              <in>vp8_loopfilter_filters_dspr2.c</in>
+            </df>
+            <df name="mmi">
+              <in>copymem_mmi.c</in>
+              <in>dequantize_mmi.c</in>
+              <in>idct_blk_mmi.c</in>
+              <in>idctllm_mmi.c</in>
+              <in>loopfilter_filters_mmi.c</in>
+              <in>sixtap_filter_mmi.c</in>
+            </df>
+            <df name="msa">
+              <in>bilinear_filter_msa.c</in>
+              <in>copymem_msa.c</in>
+              <in>idct_msa.c</in>
+              <in>loopfilter_filters_msa.c</in>
+              <in>mfqe_msa.c</in>
+              <in>sixtap_filter_msa.c</in>
+              <in>vp8_macros_msa.h</in>
+            </df>
+          </df>
+          <df name="x86">
+            <in>bilinear_filter_sse2.c</in>
+            <in>dequantize_mmx.asm</in>
+            <in>idct_blk_mmx.c</in>
+            <in>idct_blk_sse2.c</in>
+            <in>idctllm_mmx.asm</in>
+            <in>idctllm_sse2.asm</in>
+            <in>iwalsh_sse2.asm</in>
+            <in>loopfilter_block_sse2_x86_64.asm</in>
+            <in>loopfilter_sse2.asm</in>
+            <in>loopfilter_x86.c</in>
+            <in>mfqe_sse2.asm</in>
+            <in>recon_mmx.asm</in>
+            <in>recon_sse2.asm</in>
+            <in>subpixel_mmx.asm</in>
+            <in>subpixel_sse2.asm</in>
+            <in>subpixel_ssse3.asm</in>
+            <in>vp8_asm_stubs.c</in>
+          </df>
+          <in>alloccommon.c</in>
+          <in>alloccommon.h</in>
+          <in>blockd.c</in>
+          <in>blockd.h</in>
+          <in>coefupdateprobs.h</in>
+          <in>common.h</in>
+          <in>context.c</in>
+          <in>debugmodes.c</in>
+          <in>default_coef_probs.h</in>
+          <in>dequantize.c</in>
+          <in>entropy.c</in>
+          <in>entropy.h</in>
+          <in>entropymode.c</in>
+          <in>entropymode.h</in>
+          <in>entropymv.c</in>
+          <in>entropymv.h</in>
+          <in>extend.c</in>
+          <in>extend.h</in>
+          <in>filter.c</in>
+          <in>filter.h</in>
+          <in>findnearmv.c</in>
+          <in>findnearmv.h</in>
+          <in>header.h</in>
+          <in>idct_blk.c</in>
+          <in>idctllm.c</in>
+          <in>invtrans.h</in>
+          <in>loopfilter.h</in>
+          <in>loopfilter_filters.c</in>
+          <in>mbpitch.c</in>
+          <in>mfqe.c</in>
+          <in>modecont.c</in>
+          <in>modecont.h</in>
+          <in>mv.h</in>
+          <in>onyx.h</in>
+          <in>onyxc_int.h</in>
+          <in>onyxd.h</in>
+          <in>postproc.c</in>
+          <in>postproc.h</in>
+          <in>ppflags.h</in>
+          <in>quant_common.c</in>
+          <in>quant_common.h</in>
+          <in>reconinter.c</in>
+          <in>reconinter.h</in>
+          <in>reconintra.c</in>
+          <in>reconintra.h</in>
+          <in>reconintra4x4.c</in>
+          <in>reconintra4x4.h</in>
+          <in>rtcd.c</in>
+          <in>setupintrarecon.c</in>
+          <in>setupintrarecon.h</in>
+          <in>swapyv12buffer.c</in>
+          <in>swapyv12buffer.h</in>
+          <in>systemdependent.h</in>
+          <in>threading.h</in>
+          <in>treecoder.c</in>
+          <in>treecoder.h</in>
+          <in>vp8_entropymodedata.h</in>
+          <in>vp8_loopfilter.c</in>
+          <in>vp8_skin_detection.c</in>
+          <in>vp8_skin_detection.h</in>
+        </df>
+        <df name="decoder">
+          <in>dboolhuff.c</in>
+          <in>dboolhuff.h</in>
+          <in>decodeframe.c</in>
+          <in>decodemv.c</in>
+          <in>decodemv.h</in>
+          <in>decoderthreading.h</in>
+          <in>detokenize.c</in>
+          <in>detokenize.h</in>
+          <in>ec_types.h</in>
+          <in>error_concealment.c</in>
+          <in>error_concealment.h</in>
+          <in>onyxd_if.c</in>
+          <in>onyxd_int.h</in>
+          <in>threading.c</in>
+          <in>treereader.h</in>
+        </df>
+        <df name="encoder">
+          <df name="arm">
+            <df name="neon">
+              <in>denoising_neon.c</in>
+              <in>fastquantizeb_neon.c</in>
+              <in>shortfdct_neon.c</in>
+              <in>vp8_shortwalsh4x4_neon.c</in>
+            </df>
+          </df>
+          <df name="mips">
+            <df name="mmi">
+              <in>dct_mmi.c</in>
+              <in>vp8_quantize_mmi.c</in>
+            </df>
+            <df name="msa">
+              <in>dct_msa.c</in>
+              <in>denoising_msa.c</in>
+              <in>encodeopt_msa.c</in>
+              <in>quantize_msa.c</in>
+              <in>temporal_filter_msa.c</in>
+            </df>
+          </df>
+          <df name="x86">
+            <in>block_error_sse2.asm</in>
+            <in>copy_sse2.asm</in>
+            <in>copy_sse3.asm</in>
+            <in>dct_sse2.asm</in>
+            <in>denoising_sse2.c</in>
+            <in>fwalsh_sse2.asm</in>
+            <in>quantize_sse4.c</in>
+            <in>temporal_filter_apply_sse2.asm</in>
+            <in>vp8_enc_stubs_sse2.c</in>
+            <in>vp8_quantize_sse2.c</in>
+            <in>vp8_quantize_ssse3.c</in>
+          </df>
+          <in>bitstream.c</in>
+          <in>bitstream.h</in>
+          <in>block.h</in>
+          <in>boolhuff.c</in>
+          <in>boolhuff.h</in>
+          <in>copy_c.c</in>
+          <in>dct.c</in>
+          <in>dct_value_cost.h</in>
+          <in>dct_value_tokens.h</in>
+          <in>defaultcoefcounts.h</in>
+          <in>denoising.c</in>
+          <in>denoising.h</in>
+          <in>encodeframe.c</in>
+          <in>encodeframe.h</in>
+          <in>encodeintra.c</in>
+          <in>encodeintra.h</in>
+          <in>encodemb.c</in>
+          <in>encodemb.h</in>
+          <in>encodemv.c</in>
+          <in>encodemv.h</in>
+          <in>ethreading.c</in>
+          <in>ethreading.h</in>
+          <in>firstpass.c</in>
+          <in>firstpass.h</in>
+          <in>lookahead.c</in>
+          <in>lookahead.h</in>
+          <in>mcomp.c</in>
+          <in>mcomp.h</in>
+          <in>modecosts.c</in>
+          <in>modecosts.h</in>
+          <in>mr_dissim.c</in>
+          <in>mr_dissim.h</in>
+          <in>onyx_if.c</in>
+          <in>onyx_int.h</in>
+          <in>pickinter.c</in>
+          <in>pickinter.h</in>
+          <in>picklpf.c</in>
+          <in>picklpf.h</in>
+          <in>quantize.h</in>
+          <in>ratectrl.c</in>
+          <in>ratectrl.h</in>
+          <in>rdopt.c</in>
+          <in>rdopt.h</in>
+          <in>segmentation.c</in>
+          <in>segmentation.h</in>
+          <in>temporal_filter.c</in>
+          <in>temporal_filter.h</in>
+          <in>tokenize.c</in>
+          <in>tokenize.h</in>
+          <in>treewriter.c</in>
+          <in>treewriter.h</in>
+          <in>vp8_quantize.c</in>
+        </df>
+        <in>vp8_cx_iface.c</in>
+        <in>vp8_dx_iface.c</in>
+      </df>
+      <df name="vp9">
+        <df name="common">
+          <df name="arm">
+            <df name="neon">
+              <in>vp9_highbd_iht16x16_add_neon.c</in>
+              <in>vp9_highbd_iht4x4_add_neon.c</in>
+              <in>vp9_highbd_iht8x8_add_neon.c</in>
+              <in>vp9_iht16x16_add_neon.c</in>
+              <in>vp9_iht4x4_add_neon.c</in>
+              <in>vp9_iht8x8_add_neon.c</in>
+              <in>vp9_iht_neon.h</in>
+            </df>
+          </df>
+          <df name="mips">
+            <df name="dspr2">
+              <in>vp9_itrans16_dspr2.c</in>
+              <in>vp9_itrans4_dspr2.c</in>
+              <in>vp9_itrans8_dspr2.c</in>
+            </df>
+            <df name="msa">
+              <in>vp9_idct16x16_msa.c</in>
+              <in>vp9_idct4x4_msa.c</in>
+              <in>vp9_idct8x8_msa.c</in>
+              <in>vp9_mfqe_msa.c</in>
+            </df>
+          </df>
+          <df name="ppc">
+            <in>vp9_idct_vsx.c</in>
+          </df>
+          <df name="x86">
+            <in>vp9_highbd_iht16x16_add_sse4.c</in>
+            <in>vp9_highbd_iht4x4_add_sse4.c</in>
+            <in>vp9_highbd_iht8x8_add_sse4.c</in>
+            <in>vp9_idct_intrin_sse2.c</in>
+            <in>vp9_mfqe_sse2.asm</in>
+          </df>
+          <in>vp9_alloccommon.c</in>
+          <in>vp9_alloccommon.h</in>
+          <in>vp9_blockd.c</in>
+          <in>vp9_blockd.h</in>
+          <in>vp9_common.h</in>
+          <in>vp9_common_data.c</in>
+          <in>vp9_common_data.h</in>
+          <in>vp9_debugmodes.c</in>
+          <in>vp9_entropy.c</in>
+          <in>vp9_entropy.h</in>
+          <in>vp9_entropymode.c</in>
+          <in>vp9_entropymode.h</in>
+          <in>vp9_entropymv.c</in>
+          <in>vp9_entropymv.h</in>
+          <in>vp9_enums.h</in>
+          <in>vp9_filter.c</in>
+          <in>vp9_filter.h</in>
+          <in>vp9_frame_buffers.c</in>
+          <in>vp9_frame_buffers.h</in>
+          <in>vp9_idct.c</in>
+          <in>vp9_idct.h</in>
+          <in>vp9_loopfilter.c</in>
+          <in>vp9_loopfilter.h</in>
+          <in>vp9_mfqe.c</in>
+          <in>vp9_mfqe.h</in>
+          <in>vp9_mv.h</in>
+          <in>vp9_mvref_common.c</in>
+          <in>vp9_mvref_common.h</in>
+          <in>vp9_onyxc_int.h</in>
+          <in>vp9_postproc.c</in>
+          <in>vp9_postproc.h</in>
+          <in>vp9_ppflags.h</in>
+          <in>vp9_pred_common.c</in>
+          <in>vp9_pred_common.h</in>
+          <in>vp9_quant_common.c</in>
+          <in>vp9_quant_common.h</in>
+          <in>vp9_reconinter.c</in>
+          <in>vp9_reconinter.h</in>
+          <in>vp9_reconintra.c</in>
+          <in>vp9_reconintra.h</in>
+          <in>vp9_rtcd.c</in>
+          <in>vp9_scale.c</in>
+          <in>vp9_scale.h</in>
+          <in>vp9_scan.c</in>
+          <in>vp9_scan.h</in>
+          <in>vp9_seg_common.c</in>
+          <in>vp9_seg_common.h</in>
+          <in>vp9_thread_common.c</in>
+          <in>vp9_thread_common.h</in>
+          <in>vp9_tile_common.c</in>
+          <in>vp9_tile_common.h</in>
+        </df>
+        <df name="decoder">
+          <in>vp9_decodeframe.c</in>
+          <in>vp9_decodeframe.h</in>
+          <in>vp9_decodemv.c</in>
+          <in>vp9_decodemv.h</in>
+          <in>vp9_decoder.c</in>
+          <in>vp9_decoder.h</in>
+          <in>vp9_detokenize.c</in>
+          <in>vp9_detokenize.h</in>
+          <in>vp9_dsubexp.c</in>
+          <in>vp9_dsubexp.h</in>
+          <in>vp9_job_queue.c</in>
+          <in>vp9_job_queue.h</in>
+        </df>
+        <df name="encoder">
+          <df name="arm">
+            <df name="neon">
+              <in>vp9_denoiser_neon.c</in>
+              <in>vp9_error_neon.c</in>
+              <in>vp9_frame_scale_neon.c</in>
+              <in>vp9_quantize_neon.c</in>
+            </df>
+          </df>
+          <df name="mips">
+            <df name="msa">
+              <in>vp9_error_msa.c</in>
+              <in>vp9_fdct16x16_msa.c</in>
+              <in>vp9_fdct4x4_msa.c</in>
+              <in>vp9_fdct8x8_msa.c</in>
+              <in>vp9_fdct_msa.h</in>
+            </df>
+          </df>
+          <df name="ppc">
+            <in>vp9_quantize_vsx.c</in>
+          </df>
+          <df name="x86">
+            <in>highbd_temporal_filter_sse4.c</in>
+            <in>temporal_filter_constants.h</in>
+            <in>temporal_filter_sse4.c</in>
+            <in>vp9_dct_intrin_sse2.c</in>
+            <in>vp9_dct_sse2.asm</in>
+            <in>vp9_denoiser_sse2.c</in>
+            <in>vp9_diamond_search_sad_avx.c</in>
+            <in>vp9_error_avx2.c</in>
+            <in>vp9_error_sse2.asm</in>
+            <in>vp9_frame_scale_ssse3.c</in>
+            <in>vp9_highbd_block_error_intrin_sse2.c</in>
+            <in>vp9_quantize_avx2.c</in>
+            <in>vp9_quantize_sse2.c</in>
+            <in>vp9_quantize_ssse3_x86_64.asm</in>
+          </df>
+          <in>vp9_alt_ref_aq.c</in>
+          <in>vp9_alt_ref_aq.h</in>
+          <in>vp9_aq_360.c</in>
+          <in>vp9_aq_360.h</in>
+          <in>vp9_aq_complexity.c</in>
+          <in>vp9_aq_complexity.h</in>
+          <in>vp9_aq_cyclicrefresh.c</in>
+          <in>vp9_aq_cyclicrefresh.h</in>
+          <in>vp9_aq_variance.c</in>
+          <in>vp9_aq_variance.h</in>
+          <in>vp9_bitstream.c</in>
+          <in>vp9_bitstream.h</in>
+          <in>vp9_block.h</in>
+          <in>vp9_blockiness.c</in>
+          <in>vp9_blockiness.h</in>
+          <in>vp9_context_tree.c</in>
+          <in>vp9_context_tree.h</in>
+          <in>vp9_cost.c</in>
+          <in>vp9_cost.h</in>
+          <in>vp9_dct.c</in>
+          <in>vp9_denoiser.c</in>
+          <in>vp9_denoiser.h</in>
+          <in>vp9_encodeframe.c</in>
+          <in>vp9_encodeframe.h</in>
+          <in>vp9_encodemb.c</in>
+          <in>vp9_encodemb.h</in>
+          <in>vp9_encodemv.c</in>
+          <in>vp9_encodemv.h</in>
+          <in>vp9_encoder.c</in>
+          <in>vp9_encoder.h</in>
+          <in>vp9_ethread.c</in>
+          <in>vp9_ethread.h</in>
+          <in>vp9_extend.c</in>
+          <in>vp9_extend.h</in>
+          <in>vp9_firstpass.c</in>
+          <in>vp9_firstpass.h</in>
+          <in>vp9_frame_scale.c</in>
+          <in>vp9_job_queue.h</in>
+          <in>vp9_lookahead.c</in>
+          <in>vp9_lookahead.h</in>
+          <in>vp9_mbgraph.c</in>
+          <in>vp9_mbgraph.h</in>
+          <in>vp9_mcomp.c</in>
+          <in>vp9_mcomp.h</in>
+          <in>vp9_multi_thread.c</in>
+          <in>vp9_multi_thread.h</in>
+          <in>vp9_noise_estimate.c</in>
+          <in>vp9_noise_estimate.h</in>
+          <in>vp9_partition_models.h</in>
+          <in>vp9_picklpf.c</in>
+          <in>vp9_picklpf.h</in>
+          <in>vp9_pickmode.c</in>
+          <in>vp9_pickmode.h</in>
+          <in>vp9_quantize.c</in>
+          <in>vp9_quantize.h</in>
+          <in>vp9_ratectrl.c</in>
+          <in>vp9_ratectrl.h</in>
+          <in>vp9_rd.c</in>
+          <in>vp9_rd.h</in>
+          <in>vp9_rdopt.c</in>
+          <in>vp9_rdopt.h</in>
+          <in>vp9_resize.c</in>
+          <in>vp9_resize.h</in>
+          <in>vp9_segmentation.c</in>
+          <in>vp9_segmentation.h</in>
+          <in>vp9_skin_detection.c</in>
+          <in>vp9_skin_detection.h</in>
+          <in>vp9_speed_features.c</in>
+          <in>vp9_speed_features.h</in>
+          <in>vp9_subexp.c</in>
+          <in>vp9_subexp.h</in>
+          <in>vp9_svc_layercontext.c</in>
+          <in>vp9_svc_layercontext.h</in>
+          <in>vp9_temporal_filter.c</in>
+          <in>vp9_temporal_filter.h</in>
+          <in>vp9_tokenize.c</in>
+          <in>vp9_tokenize.h</in>
+          <in>vp9_treewriter.c</in>
+          <in>vp9_treewriter.h</in>
+        </df>
+        <in>vp9_cx_iface.c</in>
+        <in>vp9_dx_iface.c</in>
+        <in>vp9_dx_iface.h</in>
+        <in>vp9_iface_common.h</in>
+      </df>
+      <df name="vpx">
+        <df name="internal">
+          <in>vpx_codec_internal.h</in>
+        </df>
+        <df name="src">
+          <in>vpx_codec.c</in>
+          <in>vpx_decoder.c</in>
+          <in>vpx_encoder.c</in>
+          <in>vpx_image.c</in>
+        </df>
+        <in>vp8.h</in>
+        <in>vp8cx.h</in>
+        <in>vp8dx.h</in>
+        <in>vpx_codec.h</in>
+        <in>vpx_decoder.h</in>
+        <in>vpx_encoder.h</in>
+        <in>vpx_frame_buffer.h</in>
+        <in>vpx_image.h</in>
+        <in>vpx_integer.h</in>
+      </df>
+      <df name="vpx_dsp">
+        <df name="arm">
+          <in>avg_neon.c</in>
+          <in>avg_pred_neon.c</in>
+          <in>deblock_neon.c</in>
+          <in>fdct16x16_neon.c</in>
+          <in>fdct32x32_neon.c</in>
+          <in>fdct_neon.c</in>
+          <in>fdct_partial_neon.c</in>
+          <in>fwd_txfm_neon.c</in>
+          <in>hadamard_neon.c</in>
+          <in>highbd_idct16x16_add_neon.c</in>
+          <in>highbd_idct32x32_1024_add_neon.c</in>
+          <in>highbd_idct32x32_135_add_neon.c</in>
+          <in>highbd_idct32x32_34_add_neon.c</in>
+          <in>highbd_idct32x32_add_neon.c</in>
+          <in>highbd_idct4x4_add_neon.c</in>
+          <in>highbd_idct8x8_add_neon.c</in>
+          <in>highbd_idct_neon.h</in>
+          <in>highbd_intrapred_neon.c</in>
+          <in>highbd_loopfilter_neon.c</in>
+          <in>highbd_vpx_convolve8_neon.c</in>
+          <in>highbd_vpx_convolve_avg_neon.c</in>
+          <in>highbd_vpx_convolve_copy_neon.c</in>
+          <in>highbd_vpx_convolve_neon.c</in>
+          <in>idct16x16_1_add_neon.c</in>
+          <in>idct16x16_add_neon.c</in>
+          <in>idct32x32_135_add_neon.c</in>
+          <in>idct32x32_1_add_neon.c</in>
+          <in>idct32x32_34_add_neon.c</in>
+          <in>idct32x32_add_neon.c</in>
+          <in>idct4x4_1_add_neon.asm</in>
+          <in>idct4x4_1_add_neon.c</in>
+          <in>idct4x4_add_neon.asm</in>
+          <in>idct4x4_add_neon.c</in>
+          <in>idct8x8_1_add_neon.c</in>
+          <in>idct8x8_add_neon.c</in>
+          <in>idct_neon.asm</in>
+          <in>idct_neon.h</in>
+          <in>intrapred_neon.c</in>
+          <in>intrapred_neon_asm.asm</in>
+          <in>loopfilter_16_neon.asm</in>
+          <in>loopfilter_4_neon.asm</in>
+          <in>loopfilter_8_neon.asm</in>
+          <in>loopfilter_neon.c</in>
+          <in>mem_neon.h</in>
+          <in>quantize_neon.c</in>
+          <in>sad4d_neon.c</in>
+          <in>sad_neon.c</in>
+          <in>save_reg_neon.asm</in>
+          <in>subpel_variance_neon.c</in>
+          <in>subtract_neon.c</in>
+          <in>sum_neon.h</in>
+          <in>sum_squares_neon.c</in>
+          <in>transpose_neon.h</in>
+          <in>variance_neon.c</in>
+          <in>vpx_convolve8_avg_horiz_filter_type1_neon.asm</in>
+          <in>vpx_convolve8_avg_horiz_filter_type2_neon.asm</in>
+          <in>vpx_convolve8_avg_vert_filter_type1_neon.asm</in>
+          <in>vpx_convolve8_avg_vert_filter_type2_neon.asm</in>
+          <in>vpx_convolve8_horiz_filter_type1_neon.asm</in>
+          <in>vpx_convolve8_horiz_filter_type2_neon.asm</in>
+          <in>vpx_convolve8_neon.c</in>
+          <in>vpx_convolve8_neon.h</in>
+          <in>vpx_convolve8_neon_asm.c</in>
+          <in>vpx_convolve8_neon_asm.h</in>
+          <in>vpx_convolve8_vert_filter_type1_neon.asm</in>
+          <in>vpx_convolve8_vert_filter_type2_neon.asm</in>
+          <in>vpx_convolve_avg_neon.c</in>
+          <in>vpx_convolve_avg_neon_asm.asm</in>
+          <in>vpx_convolve_copy_neon.c</in>
+          <in>vpx_convolve_copy_neon_asm.asm</in>
+          <in>vpx_convolve_neon.c</in>
+          <in>vpx_scaled_convolve8_neon.c</in>
+        </df>
+        <df name="mips">
+          <in>add_noise_msa.c</in>
+          <in>avg_msa.c</in>
+          <in>common_dspr2.c</in>
+          <in>common_dspr2.h</in>
+          <in>convolve2_avg_dspr2.c</in>
+          <in>convolve2_avg_horiz_dspr2.c</in>
+          <in>convolve2_dspr2.c</in>
+          <in>convolve2_horiz_dspr2.c</in>
+          <in>convolve2_vert_dspr2.c</in>
+          <in>convolve8_avg_dspr2.c</in>
+          <in>convolve8_avg_horiz_dspr2.c</in>
+          <in>convolve8_dspr2.c</in>
+          <in>convolve8_horiz_dspr2.c</in>
+          <in>convolve8_vert_dspr2.c</in>
+          <in>convolve_common_dspr2.h</in>
+          <in>deblock_msa.c</in>
+          <in>fwd_dct32x32_msa.c</in>
+          <in>fwd_txfm_msa.c</in>
+          <in>fwd_txfm_msa.h</in>
+          <in>idct16x16_msa.c</in>
+          <in>idct32x32_msa.c</in>
+          <in>idct4x4_msa.c</in>
+          <in>idct8x8_msa.c</in>
+          <in>intrapred16_dspr2.c</in>
+          <in>intrapred4_dspr2.c</in>
+          <in>intrapred8_dspr2.c</in>
+          <in>intrapred_msa.c</in>
+          <in>inv_txfm_dspr2.h</in>
+          <in>inv_txfm_msa.h</in>
+          <in>itrans16_dspr2.c</in>
+          <in>itrans32_cols_dspr2.c</in>
+          <in>itrans32_dspr2.c</in>
+          <in>itrans4_dspr2.c</in>
+          <in>itrans8_dspr2.c</in>
+          <in>loopfilter_16_msa.c</in>
+          <in>loopfilter_4_msa.c</in>
+          <in>loopfilter_8_msa.c</in>
+          <in>loopfilter_filters_dspr2.c</in>
+          <in>loopfilter_filters_dspr2.h</in>
+          <in>loopfilter_macros_dspr2.h</in>
+          <in>loopfilter_masks_dspr2.h</in>
+          <in>loopfilter_mb_dspr2.c</in>
+          <in>loopfilter_mb_horiz_dspr2.c</in>
+          <in>loopfilter_mb_vert_dspr2.c</in>
+          <in>loopfilter_msa.h</in>
+          <in>macros_msa.h</in>
+          <in>sad_mmi.c</in>
+          <in>sad_msa.c</in>
+          <in>sub_pixel_variance_msa.c</in>
+          <in>subtract_mmi.c</in>
+          <in>subtract_msa.c</in>
+          <in>sum_squares_msa.c</in>
+          <in>txfm_macros_msa.h</in>
+          <in>variance_mmi.c</in>
+          <in>variance_msa.c</in>
+          <in>vpx_convolve8_avg_horiz_msa.c</in>
+          <in>vpx_convolve8_avg_msa.c</in>
+          <in>vpx_convolve8_avg_vert_msa.c</in>
+          <in>vpx_convolve8_horiz_msa.c</in>
+          <in>vpx_convolve8_mmi.c</in>
+          <in>vpx_convolve8_msa.c</in>
+          <in>vpx_convolve8_vert_msa.c</in>
+          <in>vpx_convolve_avg_msa.c</in>
+          <in>vpx_convolve_copy_msa.c</in>
+          <in>vpx_convolve_msa.h</in>
+        </df>
+        <df name="ppc">
+          <in>bitdepth_conversion_vsx.h</in>
+          <in>deblock_vsx.c</in>
+          <in>fdct32x32_vsx.c</in>
+          <in>hadamard_vsx.c</in>
+          <in>intrapred_vsx.c</in>
+          <in>inv_txfm_vsx.c</in>
+          <in>inv_txfm_vsx.h</in>
+          <in>quantize_vsx.c</in>
+          <in>sad_vsx.c</in>
+          <in>subtract_vsx.c</in>
+          <in>transpose_vsx.h</in>
+          <in>txfm_common_vsx.h</in>
+          <in>types_vsx.h</in>
+          <in>variance_vsx.c</in>
+          <in>vpx_convolve_vsx.c</in>
+        </df>
+        <df name="x86">
+          <in>add_noise_sse2.asm</in>
+          <in>avg_intrin_avx2.c</in>
+          <in>avg_intrin_sse2.c</in>
+          <in>avg_pred_sse2.c</in>
+          <in>avg_ssse3_x86_64.asm</in>
+          <in>bitdepth_conversion_avx2.h</in>
+          <in>bitdepth_conversion_sse2.asm</in>
+          <in>bitdepth_conversion_sse2.h</in>
+          <in>convolve.h</in>
+          <in>convolve_avx2.h</in>
+          <in>convolve_sse2.h</in>
+          <in>convolve_ssse3.h</in>
+          <in>deblock_sse2.asm</in>
+          <in>fwd_dct32x32_impl_avx2.h</in>
+          <in>fwd_dct32x32_impl_sse2.h</in>
+          <in>fwd_txfm_avx2.c</in>
+          <in>fwd_txfm_impl_sse2.h</in>
+          <in>fwd_txfm_sse2.c</in>
+          <in>fwd_txfm_sse2.h</in>
+          <in>fwd_txfm_ssse3_x86_64.asm</in>
+          <in>highbd_convolve_avx2.c</in>
+          <in>highbd_idct16x16_add_sse2.c</in>
+          <in>highbd_idct16x16_add_sse4.c</in>
+          <in>highbd_idct32x32_add_sse2.c</in>
+          <in>highbd_idct32x32_add_sse4.c</in>
+          <in>highbd_idct4x4_add_sse2.c</in>
+          <in>highbd_idct4x4_add_sse4.c</in>
+          <in>highbd_idct8x8_add_sse2.c</in>
+          <in>highbd_idct8x8_add_sse4.c</in>
+          <in>highbd_intrapred_intrin_sse2.c</in>
+          <in>highbd_intrapred_intrin_ssse3.c</in>
+          <in>highbd_intrapred_sse2.asm</in>
+          <in>highbd_inv_txfm_sse2.h</in>
+          <in>highbd_inv_txfm_sse4.h</in>
+          <in>highbd_loopfilter_sse2.c</in>
+          <in>highbd_quantize_intrin_sse2.c</in>
+          <in>highbd_sad4d_sse2.asm</in>
+          <in>highbd_sad_sse2.asm</in>
+          <in>highbd_subpel_variance_impl_sse2.asm</in>
+          <in>highbd_variance_impl_sse2.asm</in>
+          <in>highbd_variance_sse2.c</in>
+          <in>intrapred_sse2.asm</in>
+          <in>intrapred_ssse3.asm</in>
+          <in>inv_txfm_sse2.c</in>
+          <in>inv_txfm_sse2.h</in>
+          <in>inv_txfm_ssse3.c</in>
+          <in>inv_txfm_ssse3.h</in>
+          <in>inv_wht_sse2.asm</in>
+          <in>loopfilter_avx2.c</in>
+          <in>loopfilter_sse2.c</in>
+          <in>mem_sse2.h</in>
+          <in>post_proc_sse2.c</in>
+          <in>quantize_avx.c</in>
+          <in>quantize_sse2.c</in>
+          <in>quantize_sse2.h</in>
+          <in>quantize_ssse3.c</in>
+          <in>quantize_ssse3.h</in>
+          <in>sad4d_avx2.c</in>
+          <in>sad4d_avx512.c</in>
+          <in>sad4d_sse2.asm</in>
+          <in>sad_avx2.c</in>
+          <in>sad_sse2.asm</in>
+          <in>sad_sse3.asm</in>
+          <in>sad_sse4.asm</in>
+          <in>sad_ssse3.asm</in>
+          <in>ssim_opt_x86_64.asm</in>
+          <in>subpel_variance_sse2.asm</in>
+          <in>subtract_sse2.asm</in>
+          <in>sum_squares_sse2.c</in>
+          <in>transpose_sse2.h</in>
+          <in>txfm_common_sse2.h</in>
+          <in>variance_avx2.c</in>
+          <in>variance_sse2.c</in>
+          <in>vpx_convolve_copy_sse2.asm</in>
+          <in>vpx_high_subpixel_8t_sse2.asm</in>
+          <in>vpx_high_subpixel_bilinear_sse2.asm</in>
+          <in>vpx_subpixel_4t_intrin_sse2.c</in>
+          <in>vpx_subpixel_8t_intrin_avx2.c</in>
+          <in>vpx_subpixel_8t_intrin_ssse3.c</in>
+          <in>vpx_subpixel_8t_sse2.asm</in>
+          <in>vpx_subpixel_8t_ssse3.asm</in>
+          <in>vpx_subpixel_bilinear_sse2.asm</in>
+          <in>vpx_subpixel_bilinear_ssse3.asm</in>
+        </df>
+        <in>add_noise.c</in>
+        <in>avg.c</in>
+        <in>bitreader.c</in>
+        <in>bitreader.h</in>
+        <in>bitreader_buffer.c</in>
+        <in>bitreader_buffer.h</in>
+        <in>bitwriter.c</in>
+        <in>bitwriter.h</in>
+        <in>bitwriter_buffer.c</in>
+        <in>bitwriter_buffer.h</in>
+        <in>deblock.c</in>
+        <in>fastssim.c</in>
+        <in>fwd_txfm.c</in>
+        <in>fwd_txfm.h</in>
+        <in>intrapred.c</in>
+        <in>inv_txfm.c</in>
+        <in>inv_txfm.h</in>
+        <in>loopfilter.c</in>
+        <in>postproc.h</in>
+        <in>prob.c</in>
+        <in>prob.h</in>
+        <in>psnr.c</in>
+        <in>psnr.h</in>
+        <in>psnrhvs.c</in>
+        <in>quantize.c</in>
+        <in>quantize.h</in>
+        <in>sad.c</in>
+        <in>skin_detection.c</in>
+        <in>skin_detection.h</in>
+        <in>ssim.c</in>
+        <in>ssim.h</in>
+        <in>subtract.c</in>
+        <in>sum_squares.c</in>
+        <in>txfm_common.h</in>
+        <in>variance.c</in>
+        <in>variance.h</in>
+        <in>vpx_convolve.c</in>
+        <in>vpx_convolve.h</in>
+        <in>vpx_dsp_common.h</in>
+        <in>vpx_dsp_rtcd.c</in>
+        <in>vpx_filter.h</in>
+      </df>
+      <df name="vpx_mem">
+        <df name="include">
+          <in>vpx_mem_intrnl.h</in>
+        </df>
+        <in>vpx_mem.c</in>
+        <in>vpx_mem.h</in>
+      </df>
+      <df name="vpx_ports">
+        <in>arm.h</in>
+        <in>arm_cpudetect.c</in>
+        <in>asmdefs_mmi.h</in>
+        <in>bitops.h</in>
+        <in>emmintrin_compat.h</in>
+        <in>emms_mmx.asm</in>
+        <in>emms_mmx.c</in>
+        <in>float_control_word.asm</in>
+        <in>mem.h</in>
+        <in>mem_ops.h</in>
+        <in>mem_ops_aligned.h</in>
+        <in>msvc.h</in>
+        <in>ppc.h</in>
+        <in>ppc_cpudetect.c</in>
+        <in>system_state.h</in>
+        <in>vpx_once.h</in>
+        <in>vpx_timer.h</in>
+        <in>x86.h</in>
+        <in>x86_abi_support.asm</in>
+      </df>
+      <df name="vpx_scale">
+        <df name="generic">
+          <in>gen_scalers.c</in>
+          <in>vpx_scale.c</in>
+          <in>yv12config.c</in>
+          <in>yv12extend.c</in>
+        </df>
+        <df name="mips">
+          <df name="dspr2">
+            <in>yv12extend_dspr2.c</in>
+          </df>
+        </df>
+        <in>vpx_scale.h</in>
+        <in>vpx_scale_rtcd.c</in>
+        <in>yv12config.h</in>
+      </df>
+      <df name="vpx_util">
+        <in>endian_inl.h</in>
+        <in>vpx_atomics.h</in>
+        <in>vpx_debug_util.c</in>
+        <in>vpx_debug_util.h</in>
+        <in>vpx_thread.c</in>
+        <in>vpx_thread.h</in>
+        <in>vpx_timestamp.h</in>
+        <in>vpx_write_yuv_frame.c</in>
+        <in>vpx_write_yuv_frame.h</in>
+      </df>
+      <in>args.c</in>
+      <in>args.h</in>
+      <in>ivfdec.c</in>
+      <in>ivfdec.h</in>
+      <in>ivfenc.c</in>
+      <in>ivfenc.h</in>
+      <in>md5_utils.c</in>
+      <in>md5_utils.h</in>
+      <in>rate_hist.c</in>
+      <in>rate_hist.h</in>
+      <in>tools_common.c</in>
+      <in>tools_common.h</in>
+      <in>video_common.h</in>
+      <in>video_reader.c</in>
+      <in>video_reader.h</in>
+      <in>video_writer.c</in>
+      <in>video_writer.h</in>
+      <in>vpxdec.c</in>
+      <in>vpxenc.c</in>
+      <in>vpxenc.h</in>
+      <in>vpxstats.c</in>
+      <in>vpxstats.h</in>
+      <in>warnings.c</in>
+      <in>warnings.h</in>
+      <in>webmdec.cc</in>
+      <in>webmdec.h</in>
+      <in>webmenc.cc</in>
+      <in>webmenc.h</in>
+      <in>y4menc.c</in>
+      <in>y4menc.h</in>
+      <in>y4minput.c</in>
+      <in>y4minput.h</in>
+    </df>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>2</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_signals>
+        </gdb_signals>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>-w 832 -h 576 -sl 1 -tl 1 -sp 8 --rc-end-usage=1 -b 10240  -th 1 sm.yuv -o video.webm</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" -w 832 -h 576 -sl 1 -tl 1 -sp 8 --rc-end-usage=1 -b 10240  -th 1 sm.yuv -o video.webm</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}" -w 832 -h 576 -sl 1 -tl 1 -sp 8 --rc-end-usage=1 -b 10240  -th 1 sm.yuv -o video.webm</runcommand>
+        <rundir>.</rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+  </confs>
+</configurationDescriptor>
