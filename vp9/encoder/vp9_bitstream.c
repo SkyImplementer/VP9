@@ -1840,7 +1840,7 @@ void vp9_pack_bitstream2(VP9_COMP *cpi, uint8_t *dest, size_t *size) {
       temp++;
   }
   fflush(fp);
-
+  fclose(fp);
   *size = data - dest;
 
 

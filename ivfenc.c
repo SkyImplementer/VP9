@@ -33,6 +33,7 @@ void ivf_write_file_header(FILE *outfile, const struct vpx_codec_enc_cfg *cfg,
   FILE *fp = fopen("videoHeader","w");
   fwrite(header,1,32,fp);
   fflush(fp);
+  fclose(fp);
   fwrite(header, 1, 32, outfile);
 }
 

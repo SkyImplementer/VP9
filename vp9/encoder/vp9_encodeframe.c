@@ -5481,6 +5481,7 @@ size_t* size;
 PARTITION_CONTEXT *aboveSeg ;
 PARTITION_CONTEXT leftSeg[8];
 int fnum=1;
+uint8_t *dest;
 static void encode_nonrd_sb_row(VP9_COMP *cpi, ThreadData *td,
                                 TileDataEnc *tile_data, int mi_row,
                                 TOKENEXTRA **tp) {
@@ -5670,17 +5671,17 @@ static void encode_nonrd_sb_row(VP9_COMP *cpi, ThreadData *td,
 
 
 
-	    uint8_t *d = malloc(sizeof(uint8_t)*6144000);
+	    dest = malloc(sizeof(uint8_t)*6144000);
 	 	size = malloc(sizeof(size_t)*10);
-	    vp9_pack_bitstream2(cpi, d, size); // create the headers "Compressed and uncompressed"
+	    vp9_pack_bitstream2(cpi, dest, size); // create the headers "Compressed and uncompressed"
 	    printf("%ld\n",*size);
-
+	    //free(d);
 	    aboveSeg =  malloc(sizeof(*cm->above_seg_context) * (cm->mi_cols)); //initialize the above segments to zero
 	    memset(aboveSeg, 0,
 	           sizeof(*aboveSeg) * mi_cols_aligned_to_sb(cm->mi_cols));
 
 	    size_t total_size = 0;
-		vpx_start_encode(&residual_bc, d + total_size); //initialize the range encoder.
+		vpx_start_encode(&residual_bc, dest + total_size); //initialize the range encoder.
 		set_partition_probs(cm, xd); // set the probs for the dest macroblock.
 		vp9_zero(leftSeg); // initialize the left seg to zero.
 
@@ -5770,7 +5771,8 @@ static void encode_nonrd_sb_row(VP9_COMP *cpi, ThreadData *td,
          fflush(fp);
          fclose(fp);
          fnum++;
-
+         free(size);
+         free(dest);
     }
 
 
