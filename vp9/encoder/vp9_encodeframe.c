@@ -5702,7 +5702,7 @@ static void encode_nonrd_sb_row(VP9_COMP *cpi, ThreadData *td,
 
     xd->above_seg_context=temp;
     *size += residual_bc.pos - iq;
-    printf("%ld\n",*size);
+    //printf("%ld\n",*size);
 
     char frameNum[11];
     sprintf(frameNum, "%d", fnum);
@@ -5717,6 +5717,7 @@ static void encode_nonrd_sb_row(VP9_COMP *cpi, ThreadData *td,
     char * cfileName = frameNum;
     FILE *fp = fopen(cfileName, "w+");
     fsize+=residual_bc.pos;
+    printf("fname:%s, s:%d,e:%d\n",cfileName, iq,residual_bc.pos);
     for(iq;iq<residual_bc.pos;iq++)
     {
     	char x = residual_bc.buffer[iq];
@@ -5725,11 +5726,12 @@ static void encode_nonrd_sb_row(VP9_COMP *cpi, ThreadData *td,
 
    fflush(fp);
     num+=1;
-
+    fclose(fp);
 
     if(num==117)
     {
     	num=0;
+
         int i=residual_bc.pos;
 
         vpx_stop_encode(&residual_bc);
@@ -5746,7 +5748,7 @@ static void encode_nonrd_sb_row(VP9_COMP *cpi, ThreadData *td,
               fwrite(&x, 1, sizeof(x), fp);
         }
          fflush(fp);
-
+         fclose(fp);
 
 
 
@@ -5766,7 +5768,7 @@ static void encode_nonrd_sb_row(VP9_COMP *cpi, ThreadData *td,
 
          fwrite(header,1,12,fp);
          fflush(fp);
-
+         fclose(fp);
          fnum++;
 
     }
