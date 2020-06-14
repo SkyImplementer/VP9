@@ -587,7 +587,7 @@ static void write_modes(
     	//printf("tok start:%p, tok end:%p\n",tok,tok_end);
       write_modes_sb(cpi, xd, tile, w, &tok, tok_end, mi_row, mi_col,
                      BLOCK_64X64, max_mv_magnitude, interp_filter_selected);
-        FILE *fp = fopen(cfileName, "w+");
+        /*FILE *fp = fopen(cfileName, "w+");
         int i=lastp;
 
        for(i=lastp;i<w->pos;i++)
@@ -599,7 +599,7 @@ static void write_modes(
        num+=1;
        sprintf(snum, "%d", num);
        cfileName = snum;
-       lastp=w->pos;
+       lastp=w->pos;*/
          //fwrite(buffer, 1, size, writer->file)
     }
 
@@ -661,8 +661,8 @@ static void update_coef_probs_common(vpx_writer *const bc, VP9_COMP *cpi,
                 const vpx_prob oldp = old_coef_probs[i][j][k][l][t];
                 int s;
                 int u = 0;
-                /* EHAB
-                 * if (t == PIVOT_NODE)
+                 //EHAB
+                 /*if (t == PIVOT_NODE)
                   s = vp9_prob_diff_update_savings_search_model(
                       frame_branch_ct[i][j][k][l][0], oldp, &newp, upd,
                       stepsize);
@@ -686,7 +686,7 @@ static void update_coef_probs_common(vpx_writer *const bc, VP9_COMP *cpi,
 
       //Ehab: Skip adaptaion
       vpx_write_bit(bc, 0);
-      return;
+     return;
 
 
 
@@ -746,7 +746,7 @@ static void update_coef_probs_common(vpx_writer *const bc, VP9_COMP *cpi,
                 int s;
                 int u = 0;
 
-               /* if (t == PIVOT_NODE) {
+               /*if (t == PIVOT_NODE) {
                   s = vp9_prob_diff_update_savings_search_model(
                       frame_branch_ct[i][j][k][l][0], *oldp, &newp, upd,
                       stepsize);
@@ -1247,13 +1247,13 @@ static size_t encode_tiles(VP9_COMP *cpi, uint8_t *data_ptr) {
 
       vpx_stop_encode(&residual_bc);
 
-      FILE *fp = fopen("end", "w+");
+      /*FILE *fp = fopen("end", "w+");
       for(i; i<residual_bc.pos; i++)
       {
             char x = residual_bc.buffer[i];
             fwrite(&x, 1, sizeof(x), fp);
       }
-       fflush(fp);
+       fflush(fp);*/
 
        if (tile_col < tile_cols - 1 || tile_row < tile_rows - 1) {
         // size of this tile
@@ -1270,64 +1270,7 @@ static size_t encode_tiles(VP9_COMP *cpi, uint8_t *data_ptr) {
 
 
 
-size_t encode_tiles2(VP9_COMP *cpi, uint8_t *data_ptr) {
-  VP9_COMMON *const cm = &cpi->common;
-  MACROBLOCKD *const xd = &cpi->td.mb.e_mbd;
-  vpx_writer residual_bc;
-  int tile_row, tile_col;
-  size_t total_size = 0;
-  const int tile_cols = 1 << cm->log2_tile_cols;
-  const int tile_rows = 1 << cm->log2_tile_rows;
 
-  memset(cm->above_seg_context, 0,
-         sizeof(*cm->above_seg_context) * mi_cols_aligned_to_sb(cm->mi_cols));
-
-  // Encoding tiles in parallel is done only for realtime mode now. In other
-  // modes the speed up is insignificant and requires further testing to ensure
-  // that it does not make the overall process worse in any case.
-  if (cpi->oxcf.mode == REALTIME && cpi->num_workers > 1 && tile_rows == 1 &&
-      tile_cols > 1) {
-    return encode_tiles_mt(cpi, data_ptr);
-  }
-  for (tile_row = 0; tile_row < tile_rows; tile_row++) {
-    for (tile_col = 0; tile_col < tile_cols; tile_col++) {
-      int tile_idx = tile_row * tile_cols + tile_col;
-
-      if (tile_col < tile_cols - 1 || tile_row < tile_rows - 1)
-        vpx_start_encode(&residual_bc, data_ptr + total_size + 4);
-      else
-        vpx_start_encode(&residual_bc, data_ptr + total_size);
-      //printf("low:%d\n",residual_bc.lowvalue);
-      //printf("range:%d\n",residual_bc.range);
-      //printf("pos:%d\n",residual_bc.pos);
-
-      write_modes(cpi, xd, &cpi->tile_data[tile_idx].tile_info, &residual_bc,
-                  tile_row, tile_col, &cpi->max_mv_magnitude,
-                  cpi->interp_filter_selected);
-      int i=residual_bc.pos;
-
-      vpx_stop_encode(&residual_bc);
-
-      FILE *fp = fopen("end", "w+");
-      for(i; i<residual_bc.pos; i++)
-      {
-            char x = residual_bc.buffer[i];
-            fwrite(&x, 1, sizeof(x), fp);
-      }
-       fflush(fp);
-
-       if (tile_col < tile_cols - 1 || tile_row < tile_rows - 1) {
-        // size of this tile
-
-        mem_put_be32(data_ptr + total_size, residual_bc.pos);
-        total_size += 4;
-      }
-
-      total_size += residual_bc.pos;
-    }
-  }
-  return total_size;
-}
 
 
 static void write_render_size(const VP9_COMMON *cm,
@@ -1594,7 +1537,7 @@ static size_t write_compressed_header(VP9_COMP *cpi, uint8_t *data) {
   update_coef_probs(cpi, &header_bc);
   update_skip_probs(cm, &header_bc, counts);
 
-  if (!frame_is_intra_only(cm)) {
+  /*if (!frame_is_intra_only(cm)) {
     int i;
 
     for (i = 0; i < INTER_MODE_CONTEXTS; ++i)
@@ -1644,9 +1587,9 @@ static size_t write_compressed_header(VP9_COMP *cpi, uint8_t *data) {
       prob_diff_update(vp9_partition_tree, fc->partition_prob[i],
                        counts->partition[i], PARTITION_TYPES, &header_bc);
 
-    vp9_write_nmv_probs(cm, cm->allow_high_precision_mv, &header_bc,
-                        &counts->mv);
-  }
+    //vp9_write_nmv_probs(cm, cm->allow_high_precision_mv, &header_bc,
+      //                  &counts->mv);
+  }*/
 
   vpx_stop_encode(&header_bc);
   assert(header_bc.pos <= 0xffff);
@@ -1734,63 +1677,6 @@ int numx = 1;
 uint8_t * old= NULL;
 size_t ss = 0;
 void vp9_pack_bitstream(VP9_COMP *cpi, uint8_t *dest, size_t *size) {
-  /*uint8_t *data = dest;
-  size_t first_part_size, uncompressed_hdr_size;
-  struct vpx_write_bit_buffer wb = { data, 0 };
-  struct vpx_write_bit_buffer saved_wb;
-
-#if CONFIG_BITSTREAM_DEBUG
-  bitstream_queue_reset_write();
-#endif
-
-  write_uncompressed_header(cpi, &wb);
-
-  // Skip the rest coding process if use show existing frame.
-  if (cpi->common.show_existing_frame) {
-    uncompressed_hdr_size = vpx_wb_bytes_written(&wb);
-    data += uncompressed_hdr_size;
-    *size = data - dest;
-    return;
-  }
-
-
-  saved_wb = wb;
-  vpx_wb_write_literal(&wb, 0, 16);  // don't know in advance first part. size
-
-  uncompressed_hdr_size = vpx_wb_bytes_written(&wb);
-  data += uncompressed_hdr_size;
-  vpx_clear_system_state();
-  first_part_size = write_compressed_header(cpi, data);
-  data += first_part_size;
-
-
-  printf("firspartSize: %d\n",first_part_size);
-
-
-
-  // TODO(jbb): Figure out what to do if first_part_size > 16 bits.
-  vpx_wb_write_literal(&saved_wb, (int)first_part_size, 16);
-
-
-
-  FILE *fp = fopen("header", "w+");
-  uint8_t *temp = dest;
-  while(temp!=data)
-  {
-     fwrite(temp, 1, sizeof(char), fp);
-      temp++;
-  }
-  fflush(fp);
-
-
-
-  data += encode_tiles(cpi, data);
-
-  *size = data - dest;*/
-}
-
-int fnumx=1;
-void vp9_pack_bitstream2(VP9_COMP *cpi, uint8_t *dest, size_t *size) {
   uint8_t *data = dest;
   size_t first_part_size, uncompressed_hdr_size;
   struct vpx_write_bit_buffer wb = { data, 0 };
@@ -1821,7 +1707,65 @@ void vp9_pack_bitstream2(VP9_COMP *cpi, uint8_t *dest, size_t *size) {
   data += first_part_size;
 
 
-  printf("firspartSize: %d\n",first_part_size);
+  printf("Compressed header size: %d\n",first_part_size);
+
+
+
+  // TODO(jbb): Figure out what to do if first_part_size > 16 bits.
+  vpx_wb_write_literal(&saved_wb, (int)first_part_size, 16);
+
+
+
+  /*FILE *fp = fopen("header", "w+");
+  uint8_t *temp = dest;
+  while(temp!=data)
+  {
+     fwrite(temp, 1, sizeof(char), fp);
+      temp++;
+  }
+  fflush(fp);*/
+
+
+
+  data += encode_tiles(cpi, data);
+
+  *size = data - dest;
+}
+
+int fnumx=1;
+void vp9_pack_bitstream2(VP9_COMP *cpi, uint8_t *dest, size_t *size) {
+	//vp9_pack_bitstream(cpi,dest,size);
+  uint8_t *data = dest;
+  size_t first_part_size, uncompressed_hdr_size;
+  struct vpx_write_bit_buffer wb = { data, 0 };
+  struct vpx_write_bit_buffer saved_wb;
+
+#if CONFIG_BITSTREAM_DEBUG
+  bitstream_queue_reset_write();
+#endif
+
+  write_uncompressed_header(cpi, &wb);
+
+  // Skip the rest coding process if use show existing frame.
+  if (cpi->common.show_existing_frame) {
+    uncompressed_hdr_size = vpx_wb_bytes_written(&wb);
+    data += uncompressed_hdr_size;
+    *size = data - dest;
+    return;
+  }
+
+
+  saved_wb = wb;
+  vpx_wb_write_literal(&wb, 0, 16);  // don't know in advance first part. size
+
+  uncompressed_hdr_size = vpx_wb_bytes_written(&wb);
+  data += uncompressed_hdr_size;
+  vpx_clear_system_state();
+  first_part_size = write_compressed_header(cpi, data);
+  data += first_part_size;
+
+
+  printf("Compressed header size: %d\n",first_part_size);
 
 
 

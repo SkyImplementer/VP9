@@ -38,7 +38,6 @@ void vp9_bitstream_encode_tiles_buffer_dealloc(VP9_COMP *const cpi);
 void vp9_pack_bitstream(VP9_COMP *cpi, uint8_t *dest, size_t *size);
 void vp9_pack_bitstream2(VP9_COMP *cpi, uint8_t *dest, size_t *size);
 
-size_t encode_tiles2(VP9_COMP *cpi, uint8_t *data_ptr);
 
 
 size_t write_compressed_header2(VP9_COMP *cpi, uint8_t *data);

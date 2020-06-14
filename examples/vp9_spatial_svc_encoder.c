@@ -1173,9 +1173,9 @@ int main(int argc, const char **argv) {
 				SvcInternal_t *const si = (SvcInternal_t *)svc_ctx.internal;
 				if (cx_pkt->data.frame.sz > 0) {
 					//Ehab
-					//vpx_video_writer_write_frame(writer, cx_pkt->data.frame.buf,
-					//		cx_pkt->data.frame.sz,
-					//		cx_pkt->data.frame.pts);
+					vpx_video_writer_write_frame(writer, cx_pkt->data.frame.buf,
+							cx_pkt->data.frame.sz,
+							cx_pkt->data.frame.pts);
 					printf("frame %d:, encoding time:%ld, frame size:%.2f\n",frame_cnt,vpx_usec_timer_elapsed(&timer), cx_pkt->data.frame.sz/1024.0);
 					size+=cx_pkt->data.frame.sz;
 #if OUTPUT_RC_STATS
@@ -1196,9 +1196,9 @@ int main(int argc, const char **argv) {
 #if CONFIG_VP9_DECODER && !SIMULCAST_MODE
 
 				//Ehab: commenting the followig decode check!
-				//if (vpx_codec_decode(&decoder, cx_pkt->data.frame.buf,
-				//		(unsigned int)cx_pkt->data.frame.sz, NULL, 0))
-					//die_codec(&decoder, "Failed to decode frame.");
+				/*if (vpx_codec_decode(&decoder, cx_pkt->data.frame.buf,
+						(unsigned int)cx_pkt->data.frame.sz, NULL, 0))
+					die_codec(&decoder, "Failed to decode frame.");*/
 #endif
 				break;
 			}

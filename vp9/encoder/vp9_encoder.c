@@ -30,6 +30,7 @@
 #if CONFIG_BITSTREAM_DEBUG || CONFIG_MISMATCH_DEBUG
 #include "vpx_util/vpx_debug_util.h"
 #endif  // CONFIG_BITSTREAM_DEBUG || CONFIG_MISMATCH_DEBUG
+#include "vp9/encoder/vp9_bitstream.h"
 
 #include "vp9/common/vp9_alloccommon.h"
 #include "vp9/common/vp9_filter.h"
@@ -4016,7 +4017,7 @@ static int encode_without_recode_loop(VP9_COMP *cpi, size_t *size,
 
   apply_active_map(cpi);
   //EHAB CHECK
-  vp9_encode_frame(cpi);
+  vp9_encode_frame_ehab(cpi ,size, dest);
 
   // Check if we should re-encode this frame at high Q because of high
   // overshoot based on the encoded frame size. Only for frames where
@@ -5079,13 +5080,12 @@ static void encode_frame_to_data_rate(VP9_COMP *cpi, size_t *size,
   {
 //-w 832 -h 576 -sl 1 -tl 1 -sp 8 --rc-end-usage=1 -b 10240  -th 1 sm.yuv -o video.webm
 	  clock_t before = clock();
-	  int msec = 0, trigger = 10; /* 10ms */
+	int msec = 0, trigger = 10; /* 10ms */
 
 	if (!encode_without_recode_loop(cpi, size, dest)) return;
 	  clock_t difference = clock() - before;
 	  msec = difference * 1000 / CLOCKS_PER_SEC;
-	  printf("Time encode %d milliseconds \n",
-	   msec);
+	  printf("Encoding Time %d milliseconds \n", msec);
 
   } else {
 #if !CONFIG_REALTIME_ONLY
@@ -5097,7 +5097,7 @@ static void encode_frame_to_data_rate(VP9_COMP *cpi, size_t *size,
   // current ARF will be directly used as the final reconstructed frame. This is
   // an encoder control scheme. One could in principle explore other
   // possibilities to arrange the reference frame buffer and their coding order.
-/*  if (cm->show_existing_frame) {
+ /*if (cm->show_existing_frame) {
     ref_cnt_fb(cm->buffer_pool->frame_bufs, &cm->new_fb_idx,
                cm->ref_frame_map[cpi->alt_fb_idx]);
   }
@@ -5137,9 +5137,9 @@ static void encode_frame_to_data_rate(VP9_COMP *cpi, size_t *size,
     cpi->ambient_err = vpx_get_y_sse(cpi->Source, get_frame_new_buffer(cm));
 #endif  // CONFIG_VP9_HIGHBITDEPTH
   }
-*/
+
   // If the encoder forced a KEY_FRAME decision
-  /*if (cm->frame_type == KEY_FRAME) cpi->refresh_last_frame = 1;
+  if (cm->frame_type == KEY_FRAME) cpi->refresh_last_frame = 1;
 
   cm->frame_to_show = get_frame_new_buffer(cm);
   cm->frame_to_show->color_space = cm->color_space;
@@ -5155,14 +5155,18 @@ static void encode_frame_to_data_rate(VP9_COMP *cpi, size_t *size,
   // build the bitstream
   int msec = 0, trigger = 10; /* 10ms */
   clock_t before = clock();
+	uint8_t *dest2;
+	size_t* size2;
 
-  vp9_pack_bitstream(cpi, dest, size);
+	//dest2 = malloc(sizeof(uint8_t)*3110400);
+	//size2 = malloc(sizeof(size_t)*10);
+
+  //vp9_pack_bitstream2(cpi, dest, size);
   clock_t difference = clock() - before;
   msec = difference * 1000 / CLOCKS_PER_SEC;
-  printf("Time taken %d milliseconds \n",
-   msec);
-
-
+  //printf("Packing Time %d milliseconds \n",  msec);
+  //free(dest2);
+  //free(size2);
   /*FILE * fp=fopen("h5","w");
    int i = 0;
    for(i;i<353;i++)

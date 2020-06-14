@@ -45,10 +45,10 @@ void ivf_write_frame_header(FILE *outfile, int64_t pts, size_t frame_size) {
   mem_put_le32(header + 8, (int)(pts >> 32));
 
   fwrite(header, 1, 12, outfile);
-  FILE *fp = fopen("h2","w");
-  fwrite(header,1,12,fp);
-  fflush(fp);
-  //fwrite(header, 1, 12, outfile);
+  //Ehab
+  //FILE *fp = fopen("h2","w");
+  //fwrite(header,1,12,fp);
+  //fflush(fp);
 
 }
 
