@@ -5490,7 +5490,7 @@ int sbInHeigth;
 clock_t before;
 size_t sbefore;
 clock_t startc;
-int FLAG_WRITE = 1;
+int FLAG_WRITE = 0;
 
 static void encode_nonrd_sb_row_ehab(VP9_COMP *cpi, ThreadData *td,
 		TileDataEnc *tile_data, int mi_row,
@@ -5681,6 +5681,7 @@ static void encode_nonrd_sb_row_ehab(VP9_COMP *cpi, ThreadData *td,
 
 		if(num==0) // for the first superblock within the frame
 		{
+			printf("================\n");
 			before = clock();
 			startc = clock();
 			sbefore =0;
@@ -5825,7 +5826,7 @@ static void encode_nonrd_sb_row_ehab(VP9_COMP *cpi, ThreadData *td,
 			difference = clock() - startc;
 			msec = difference * 1000 / CLOCKS_PER_SEC;
 
-			printf("Total time:%d ms, Total Size: %ld B\n",msec,*size);
+			//printf("Total time:%d ms, Total Size: %ld B\n",msec,*size);
 			//vp9_pack_bitstream2(cpi, dest, size); // create the headers "Compressed and uncompressed"
 
 			//free(size);
@@ -6748,7 +6749,7 @@ static void encode_frame_internal_ehab (VP9_COMP *cpi, size_t *size,  uint8_t *d
 	VP9_COMMON *const cm = &cpi->common;
 	MACROBLOCKD *const xd = &x->e_mbd;
 	const int gf_group_index = cpi->twopass.gf_group.index;
-	printf("encode_frame_internal_ehab()\n");
+	//printf("encode_frame_internal_ehab()\n");
 	xd->mi = cm->mi_grid_visible;
 	xd->mi[0] = cm->mi;
 	vp9_zero(*td->counts);
@@ -6845,7 +6846,7 @@ static void encode_frame_internal_ehab (VP9_COMP *cpi, size_t *size,  uint8_t *d
 	if (cpi->oxcf.aq_mode == PERCEPTUAL_AQ) build_kmeans_segmentation(cpi);
 
 	{
-		printf("Encode Row\n");
+		//printf("Encode Row\n");
 		struct vpx_usec_timer emr_timer;
 		vpx_usec_timer_start(&emr_timer);
 
@@ -7109,7 +7110,7 @@ static void restore_encode_params(VP9_COMP *cpi) {
 #endif
 void vp9_encode_frame_ehab(VP9_COMP *cpi, size_t *size,  uint8_t *dest)
 {
-	printf("vp9_encode_frame_ehab()\n");
+	//printf("vp9_encode_frame_ehab()\n");
 	VP9_COMMON *const cm = &cpi->common;
 
 #if CONFIG_CONSISTENT_RECODE

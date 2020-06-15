@@ -532,7 +532,7 @@ vpx_codec_err_t vpx_svc_init(SvcContext *svc_ctx, vpx_codec_ctx_t *codec_ctx,
 vpx_codec_err_t vpx_svc_encode(SvcContext *svc_ctx, vpx_codec_ctx_t *codec_ctx,
 		struct vpx_image *rawimg, vpx_codec_pts_t pts,
 		int64_t duration, int deadline) {
-	printf("\n===================vpx_svc_encode()\n");
+	//printf("\n===================vpx_svc_encode()\n");
 	vpx_codec_err_t res;
 	vpx_codec_iter_t iter;
 	const vpx_codec_cx_pkt_t *cx_pkt;

@@ -1149,7 +1149,7 @@ int main(int argc, const char **argv) {
 		//Ehab, Encode
 		vpx_usec_timer_start(&timer);
 
-		printf("main()\n");
+		//printf("main()\n");
 
 		//Ehab: Encoding function
 		res = vpx_svc_encode(
@@ -1176,7 +1176,7 @@ int main(int argc, const char **argv) {
 					vpx_video_writer_write_frame(writer, cx_pkt->data.frame.buf,
 							cx_pkt->data.frame.sz,
 							cx_pkt->data.frame.pts);
-					printf("frame %d:, encoding time:%ld, frame size:%.2f\n",frame_cnt,vpx_usec_timer_elapsed(&timer), cx_pkt->data.frame.sz/1024.0);
+					printf("frame %d:, encoding time:%ld, frame size:%d\n",frame_cnt,vpx_usec_timer_elapsed(&timer), cx_pkt->data.frame.sz);
 					size+=cx_pkt->data.frame.sz;
 #if OUTPUT_RC_STATS
 					if (svc_ctx.output_rc_stat) {

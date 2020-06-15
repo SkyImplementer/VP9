@@ -1224,7 +1224,7 @@ static vpx_codec_err_t encoder_encode(vpx_codec_alg_priv_t *ctx,
         return VPX_CODEC_ERROR;
       }
     }
-	printf("encoder_encode()\n");
+	//printf("encoder_encode()\n");
     while (cx_data_sz >= ctx->cx_data_sz / 2 &&
            -1 != vp9_get_compressed_data(cpi, &lib_flags, &size, cx_data,
                                          &dst_time_stamp, &dst_end_time_stamp,
@@ -1806,7 +1806,7 @@ static vpx_codec_enc_cfg_map_t encoder_usage_cfg_map[] = {
 #define VERSION_STRING
 #endif
 CODEC_INTERFACE(vpx_codec_vp9_cx) = {
-  "EhabWebM Project VP9 Encoder" VERSION_STRING,
+  "WebM Project VP9 Encoder" VERSION_STRING,
   VPX_CODEC_INTERNAL_ABI_VERSION,
 #if CONFIG_VP9_HIGHBITDEPTH
   VPX_CODEC_CAP_HIGHBITDEPTH |

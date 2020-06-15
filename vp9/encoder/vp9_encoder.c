@@ -3748,7 +3748,7 @@ static INLINE void set_raw_source_frame(VP9_COMP *cpi) {
 
 static int encode_without_recode_loop(VP9_COMP *cpi, size_t *size,
                                       uint8_t *dest) {
-  printf("encode_without_recode_loop\n");
+  //printf("encode_without_recode_loop\n");
   VP9_COMMON *const cm = &cpi->common;
   SVC *const svc = &cpi->svc;
   int q = 0, bottom_index = 0, top_index = 0;
@@ -5074,18 +5074,18 @@ static void encode_frame_to_data_rate(VP9_COMP *cpi, size_t *size,
   // Backup to ensure consistency between recodes
   save_encode_params(cpi);
 #endif
-  printf("encode_frame_to_data_rate()\n");
+  //printf("encode_frame_to_data_rate()\n");
 
   if (cpi->sf.recode_loop == DISALLOW_RECODE)
   {
 //-w 832 -h 576 -sl 1 -tl 1 -sp 8 --rc-end-usage=1 -b 10240  -th 1 sm.yuv -o video.webm
-	  clock_t before = clock();
-	int msec = 0, trigger = 10; /* 10ms */
+	 // clock_t before = clock();
+	//int msec = 0, trigger = 10; /* 10ms */
 
 	if (!encode_without_recode_loop(cpi, size, dest)) return;
-	  clock_t difference = clock() - before;
-	  msec = difference * 1000 / CLOCKS_PER_SEC;
-	  printf("Encoding Time %d milliseconds \n", msec);
+	  //clock_t difference = clock() - before;
+	  //msec = difference * 1000 / CLOCKS_PER_SEC;
+	  //printf("Total ET %d ms, size:%d Bytes \n", msec, *size);
 
   } else {
 #if !CONFIG_REALTIME_ONLY
@@ -5311,7 +5311,7 @@ static void Pass0Encode(VP9_COMP *cpi, size_t *size, uint8_t *dest,
     vp9_rc_get_one_pass_vbr_params(cpi);
   }
      
-    printf("Pass0Encode!\n");
+    //printf("Pass0Encode!\n");
 
   encode_frame_to_data_rate(cpi, size, dest, frame_flags);
 }
@@ -7209,7 +7209,7 @@ static void setup_tpl_stats(VP9_COMP *cpi) {
 int vp9_get_compressed_data(VP9_COMP *cpi, unsigned int *frame_flags,
                             size_t *size, uint8_t *dest, int64_t *time_stamp,
                             int64_t *time_end, int flush) {
-    printf("vp9_get_compressed_data 1!\n");
+   // printf("vp9_get_compressed_data 1!\n");
   const VP9EncoderConfig *const oxcf = &cpi->oxcf;
   VP9_COMMON *const cm = &cpi->common;
   BufferPool *const pool = cm->buffer_pool;
@@ -7341,7 +7341,7 @@ int vp9_get_compressed_data(VP9_COMP *cpi, unsigned int *frame_flags,
   }
 
   if (source) {
-	printf("vp9_get_compressed_data() SOURCE!\n");
+	//printf("vp9_get_compressed_data() SOURCE!\n");
     cpi->un_scaled_source = cpi->Source =
         force_src_buffer ? force_src_buffer : &source->img;
 
@@ -7364,7 +7364,7 @@ int vp9_get_compressed_data(VP9_COMP *cpi, unsigned int *frame_flags,
       cpi->twopass.first_pass_done = 1;
     }
 #endif  // !CONFIG_REALTIME_ONLY
-	printf("vp9_get_compressed_data() STOP!\n");
+	//printf("vp9_get_compressed_data() STOP!\n");
     return -1;
   }
 
@@ -7482,7 +7482,7 @@ int vp9_get_compressed_data(VP9_COMP *cpi, unsigned int *frame_flags,
     SvcEncode(cpi, size, dest, frame_flags);
   } else {
     // One pass encode
-    printf("vp9_get_compressed_data 2!\n");
+    //printf("vp9_get_compressed_data 2!\n");
     Pass0Encode(cpi, size, dest, frame_flags);
 
   }
